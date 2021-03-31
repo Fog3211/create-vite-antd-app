@@ -1,1 +1,1 @@
-# ctreate-vite-antd-app
+# create-vite-antd-app
