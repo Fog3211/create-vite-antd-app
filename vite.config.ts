@@ -6,6 +6,7 @@ import fs from 'fs'
 import lessToJS from 'less-vars-to-js'
 import prodConfig from './configs/vite.prod'
 import devConfig from './configs/vite.dev'
+import { babel } from '@rollup/plugin-babel'
 
 const isDev = process.argv[process.argv.length - 1] === 'development'
 
@@ -16,7 +17,8 @@ const themeVariables = lessToJS(
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    reactRefresh()
+    reactRefresh(),
+    babel({ babelHelpers: 'bundled' })
   ],
   css: {
     preprocessorOptions: {
